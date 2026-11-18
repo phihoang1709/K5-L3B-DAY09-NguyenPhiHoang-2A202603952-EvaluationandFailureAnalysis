@@ -1,6 +1,6 @@
 """Regression test for docs/trace_case.md: swarm C-002@55 (FM-03 ticket_trust).
 
-Hand-built trials reproducing the exact trace/ledger of run E-swarm-20261118-671d:
+Hand-built trials reproducing the exact trace/ledger of run E-swarm-20261118-9c19:
 the swarm shape overrides the DB delay_days with the ticket value (event 3, model_override)
 and commits a 20.000đ refund on a claim whose label is denied/0đ. The graders must catch it;
 the same trial without the override (the `fixed` behaviour) must pass.

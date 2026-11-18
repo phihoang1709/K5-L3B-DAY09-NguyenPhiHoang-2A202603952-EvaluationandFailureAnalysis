@@ -10,11 +10,11 @@ python -m lab9.trace_case --shape fixed --claim C-002 --seed 55      # đối ch
 
 Lệnh in ra ba phần: các event trong trace (`reply`, `decision`, `model_override`, `error` …), ledger so với nhãn, và lý do của grader Lab 8.
 
-## Case: swarm C-002@55 — run `E-swarm-20261118-671d` (reports/baseline_v1.json)
+## Case: swarm C-002@55 — run `E-swarm-20261118-9c19` (reports/baseline_v1.json)
 
 | Trường | Nội dung |
 |---|---|
-| Trial | `swarm C-002@55`, run ID `E-swarm-20261118-671d`, baseline swarm pass_rate 0.9857 |
+| Trial | `swarm C-002@55`, run ID `E-swarm-20261118-9c19`, baseline swarm pass_rate 0.9857 |
 | Triệu chứng | `TrialPass` FAIL (`status resolved != denied`); reply nói "Dạ, LogiX đã hoàn 20.000đ cho đơn O-202." trong khi ledger ghi `refund_vnd=20000` nhưng label là **0đ/denied** |
 | Bước sai đầu tiên | Event **3 `model_override` {"delay_days": 5}** — agent đè số ngày của DB bằng số parse từ ticket |
 | Vì sao là bước *đầu tiên* | Event 1 `handoff` và event 2 `investigator` hợp lệ: `lookup_order.visible=true, reason=ok`, DB trả `delay_days` thật; sai chỉ bắt đầu khi agent thay thế dữ liệu DB bằng ticket |
